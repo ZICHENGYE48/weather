@@ -13,6 +13,7 @@ function App() {
         </div>
         <div className={styles.bottom}>
           <OtherCities />
+          <div className={styles.divider} />
           <Forecast />
         </div>
       </div>
