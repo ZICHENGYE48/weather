@@ -19,7 +19,6 @@
 .bottom{
 	display: flex;
 	flex-direction: row;
-	min-height: 278px;
 	justify-content: space-around;
 	padding: 36px 0;
 }

@@ -8,7 +8,6 @@ const OtherCities = () =>(
 		<City city="Melbourne" temperature="12"></City>
 		<City city="Melbourne" temperature="12"></City>
 		<City city="Melbourne" temperature="12"></City>
-		<City city="Melbourne" temperature="12"></City>
 	</div>
 )
 
