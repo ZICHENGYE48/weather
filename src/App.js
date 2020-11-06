@@ -1,7 +1,7 @@
 import React from 'react';
-import CurrentWeather from './Component/CurrentWeather';
-import OtherCities from './Component/OtherCities';
-import Forecast from './Component/Forecast';
+import CurrentWeather from './component/CurrentWeather';
+import OtherCities from './component/OtherCities';
+import Forecast from './component/Forecast';
 import styles from './App.module.css';
 
 function App() {
