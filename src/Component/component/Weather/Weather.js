@@ -9,7 +9,7 @@ const Weather = ({
 }) =>(
 	<div className={styles.wrapper}>
 		<h3>{day}</h3>
-		<img src={pic} alt="picture" />
+		<img src={pic} alt="weather" />
 		<div className={styles.temperature}>
 			<Temperature>{temperature}</Temperature>
 		</div>
