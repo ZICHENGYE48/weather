@@ -1,7 +1,6 @@
 import React from 'react';
 import styles from './City.module.css';
 import Temperature from '../Temperature';
-// import Cloudy from '../../../img/cloudy.svg';
 
 const City = ({
 	name,
