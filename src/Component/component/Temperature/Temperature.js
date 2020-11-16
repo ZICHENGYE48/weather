@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Temperature = ({children}) =>(
-  <div>
+  <div data-testid="TEMP">
     {children}
     <span>&nbsp;</span>
     <span>&#176;</span>

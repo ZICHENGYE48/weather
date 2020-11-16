@@ -8,13 +8,13 @@ const City = ({
 	icon,
 	description
 })=>(
-	<button>
-	<h3 className={styles.title}>{name}</h3>
-	<div className={styles.temperature}>
-		<Temperature>{temperature}</Temperature>
-	</div>
-	<img className={styles.pic} src={`http://openweathermap.org/img/wn/${icon}.png`}  alt={description} />
-</button>
+	<button data-testid="CITY">
+		<h3 data-testid="NAME" className={styles.title}>{name}</h3>
+		<div className={styles.temperature}>
+			<Temperature>{temperature}</Temperature>
+		</div>
+		<img data-testid="WEATHER_ICON" className={styles.pic} src={`http://openweathermap.org/img/wn/${icon}.png`}  alt={description} />
+	</button>
 )
 
 

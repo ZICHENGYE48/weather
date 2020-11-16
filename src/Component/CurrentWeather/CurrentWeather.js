@@ -37,26 +37,26 @@ class CurrentWeather extends React.Component{
 		console.log(data);
 
 		return(
-			<div className={styles.current}>
+			<div data-testid="CURRENT" className={styles.current}>
 				{loading ? (<div className={styles.loading}>Loading...</div>) :(
 					<>
 							<div className={styles.left}>
 							<div className={styles.temperature}>
 								<Temperature>{parseInt(data.main.temp)}</Temperature>
 							</div>
-							<span className={styles.weather}>{data.weather.main}</span>
+							<span data-testid="WEATHER" className={styles.weather}>{data.weather[0].main}</span>
 							<div className={styles.meta}>
-								<div className={styles.humidity}>
+								<div data-testid="HUMIDITY" className={styles.humidity}>
 									<Meta title="HUMIDITY" value= {`${data.main.humidity}%`} />
 								</div>
 								<div className={styles.divider} />
-								<div className={styles.wind}>
+								<div data-testid="WIND" className={styles.wind}>
 									<Meta title="WIND" value= {`${parseInt(data.main.temp)}K/M`} />
 								</div>
 							</div>
 						</div>
 						<div className={styles.right}>
-							<span className={styles.city}>{data.name}</span>
+							<span data-testid="NAME" className={styles.city}>{data.name}</span>
 							<div className={styles.shadow} />
 						</div>
 						</>

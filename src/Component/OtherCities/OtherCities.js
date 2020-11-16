@@ -47,7 +47,7 @@ class OtherCities extends React.Component{
 		console.log(data);
 
 		return(
-			<div className={styles.wrapper}>
+			<div data-testid="OTHER_CITIES" className={styles.wrapper}>
 				<h2 className={styles.title}>Other Cities</h2>
 				{loading ? (
 				<div className={styles.loading}>Loading...</div>
