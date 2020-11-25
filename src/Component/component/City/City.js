@@ -6,9 +6,10 @@ const City = ({
 	name,
 	temperature,
 	icon,
-	description
+	description,
+	onClick,
 })=>(
-	<button data-testid="CITY">
+	<button data-testid="CITY" onClick={onClick}>
 		<h3 data-testid="NAME" className={styles.title}>{name}</h3>
 		<div className={styles.temperature}>
 			<Temperature>{temperature}</Temperature>

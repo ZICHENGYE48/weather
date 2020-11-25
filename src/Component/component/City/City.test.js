@@ -33,7 +33,7 @@ describe('<City>', () => {
 		const {getByAltText} = renderResult;
 
 		expect(getByAltText(props.description)).toBeInTheDocument();
-		expect(getByAltText(props.description).getAttribute('src')).
-			toBe(`http://openweathermap.org/img/wn/${props.icon}.png`)
+		expect(getByAltText(props.description).getAttribute('src'))
+			.toBe(`http://openweathermap.org/img/wn/${props.icon}.png`)
 	});
 })

@@ -2,6 +2,8 @@ import React from 'react';
 import City from '../component/City';
 import styles from './OtherCities.module.css';
 import getWeathers from '../../api/getWeathers/getWeathers';
+import { connect } from 'react-redux';
+import setCity from '../../store/city/action/setCity';
 
 const CITIES = [{
 	name: 'Melbourne',
@@ -25,10 +27,10 @@ class OtherCities extends React.Component{
 	}
 
 	componentDidMount(){
-		this.getWeather();
+		this.getWeathers();
 	}
 
-	async getWeather(){
+	async getWeathers(){
 
 		const ids = CITIES.map((c)=>(c.id));
 
@@ -42,7 +44,9 @@ class OtherCities extends React.Component{
 
 	render(){
 
-		const {data, loading} = this.state;
+		const { data, loading } = this.state;
+
+		const { currentCity,onCityClick } = this.props;
 
 		console.log(data);
 
@@ -53,13 +57,21 @@ class OtherCities extends React.Component{
 				<div className={styles.loading}>Loading...</div>
 				):(
 					<React.Fragment>
-					{data.list.map((item)=>(
+					{data.list.map((item)=>{
+						if (item.id === currentCity.id) {
+							return null;
+						}
+							return(
 						<City key={item.id}
 									name ={item.name}
 									temperature= {parseInt(item.main.temp)}
 									icon={item.weather[0].icon}
-									description={item.weather[0].description}/>
-					))}
+									description={item.weather[0].description}
+									onclick={() =>onCityClick({
+										name: item.name,
+										id: item.id,
+									})}/>)
+					})}
 					</React.Fragment>
 				)
 				}
@@ -68,4 +80,16 @@ class OtherCities extends React.Component{
 	}
 }
 
-export default OtherCities;
+// export default OtherCities;
+
+const mapStateToProps = (state) =>({
+	currentCity: state.city,
+})
+
+const mapDispatchToProps = (dispatch) =>({
+	onCityClick: (city) => dispatch(setCity(city)),
+})
+
+const OtherCitiesContainer = connect(mapStateToProps, mapDispatchToProps)(OtherCities);
+
+export default OtherCitiesContainer;

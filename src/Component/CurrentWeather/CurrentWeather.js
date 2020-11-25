@@ -3,8 +3,9 @@ import Meta from '../component/Meta';
 import Temperature from '../component/Temperature';
 import styles from './CurrentWeather.module.css';
 import getWeather from '../../api/getWeather/getWeather';
+import { connect } from 'react-redux';
 
-const DEFAULT_CITY = "Sydney";
+// const DEFAULT_CITY = "Sydney";
 
 class CurrentWeather extends React.Component{
 	constructor(props){
@@ -12,29 +13,41 @@ class CurrentWeather extends React.Component{
 
 		this.state ={
 			data: null,
-			loading: true
+			loading: true,
 		}
 	}
 
-	async componentDidMount(){
+	componentDidMount(){
+		this.getWeather();
+	}
+
+	componentDidUpdate(props){
+		if(props.city !== this.props.city)
 		this.getWeather();
 	}
 
 	async getWeather (){
 
-	const {data} =	await getWeather(DEFAULT_CITY);
+	const { city } = this.props;
+	console.log(city);
 
-		this.setState({
-			data,
-			loading: false
-		})
+	this.setState({
+		loading: true,
+	})
+
+	const { name } = city;
+
+	const { data } = await getWeather(name);
+
+	this.setState({
+		data,
+		loading: false,
+	})
 	}
 
 	render(){
 
 		const {data ,loading} =this.state;
-
-		console.log(data);
 
 		return(
 			<div data-testid="CURRENT" className={styles.current}>
@@ -68,4 +81,12 @@ class CurrentWeather extends React.Component{
 }
 
 
-export default CurrentWeather;
+// export default CurrentWeather;
+
+const mapStateToProps = (state) =>({
+	city: state.city,
+})
+
+const CurrentWeatherContainer = connect(mapStateToProps)(CurrentWeather);
+
+export default CurrentWeatherContainer;
