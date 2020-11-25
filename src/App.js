@@ -4,7 +4,8 @@ import OtherCities from './component/OtherCities';
 import Forecast from './component/Forecast';
 import styles from './App.module.css';
 
-function App() {
+class App extends React.Component {
+  render(){
   return (
     <div className={styles.app}>
       <div className={styles.weather}>
@@ -19,6 +20,7 @@ function App() {
       </div>
     </div>
   );
+  }
 }
 
 export default App;

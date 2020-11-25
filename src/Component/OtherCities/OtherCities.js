@@ -67,8 +67,8 @@ class OtherCities extends React.Component{
 									temperature= {parseInt(item.main.temp)}
 									icon={item.weather[0].icon}
 									description={item.weather[0].description}
-									onclick={() =>onCityClick({
-										name: item.name,
+									onClick={() =>onCityClick({
+										name: 'Melbourne',
 										id: item.id,
 									})}/>)
 					})}
