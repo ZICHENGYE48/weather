@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# A weather app using React and redux (unit tests and e2e test)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Basic Functions : 
+1. Display the current weather of Sydney on the top (Default city)
+2. Display the current weather of Perth, Melbourne and Darwin.
+3. Change default city to Perth, Melbourne and Darwin and display on the top
+4. Implemented unit tests and e2e test using Jest and cypress.
+
+### To-do List 
+- [ ] Achieve higher coverage of unit test
+- [ ] Refactor with styled-system
+- [ ] Refactor with hooks
 
 ## Available Scripts
 
