@@ -14,6 +14,9 @@ const CITIES = [{
 },{
 	name: 'Darwin',
 	id: 2073124
+},{
+    name: 'Sydney',
+    id: 2147714,
 }]
 
 class OtherCities extends React.Component{
@@ -68,7 +71,7 @@ class OtherCities extends React.Component{
 									icon={item.weather[0].icon}
 									description={item.weather[0].description}
 									onClick={() =>onCityClick({
-										name: 'Melbourne',
+										name: item.name,
 										id: item.id,
 									})}/>)
 					})}
