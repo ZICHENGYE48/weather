@@ -1,6 +1,6 @@
-import {SET_CITY} from '../../type';
+import { SET_CITY } from "../../type";
 
-export default (city) =>({
-    type: SET_CITY,
-    city,
+export default (city) => ({
+  type: SET_CITY,
+  city,
 });
