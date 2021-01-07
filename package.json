@@ -1,6 +1,11 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.16.2",
+    "npm": "6.14.4",
+    "yarn": "1.x"
+  },
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.4.0",
